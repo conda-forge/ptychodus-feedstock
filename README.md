@@ -30,6 +30,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ptychodus-green.svg)](https://anaconda.org/conda-forge/ptychodus) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ptychodus.svg)](https://anaconda.org/conda-forge/ptychodus) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ptychodus.svg)](https://anaconda.org/conda-forge/ptychodus) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ptychodus.svg)](https://anaconda.org/conda-forge/ptychodus) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ptychodus--all-green.svg)](https://anaconda.org/conda-forge/ptychodus-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ptychodus-all.svg)](https://anaconda.org/conda-forge/ptychodus-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ptychodus-all.svg)](https://anaconda.org/conda-forge/ptychodus-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ptychodus-all.svg)](https://anaconda.org/conda-forge/ptychodus-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ptychodus--core-green.svg)](https://anaconda.org/conda-forge/ptychodus-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ptychodus-core.svg)](https://anaconda.org/conda-forge/ptychodus-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ptychodus-core.svg)](https://anaconda.org/conda-forge/ptychodus-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ptychodus-core.svg)](https://anaconda.org/conda-forge/ptychodus-core) |
 
 Installing ptychodus
 ====================
@@ -41,16 +43,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ptychodus` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ptychodus, ptychodus-all, ptychodus-core` can be installed with `conda`:
 
 ```
-conda install ptychodus
+conda install ptychodus ptychodus-all ptychodus-core
 ```
 
 or with `mamba`:
 
 ```
-mamba install ptychodus
+mamba install ptychodus ptychodus-all ptychodus-core
 ```
 
 It is possible to list all of the versions of `ptychodus` available on your platform with `conda`:

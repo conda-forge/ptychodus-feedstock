@@ -2,7 +2,7 @@
 {% set version = "0.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: ptychodus
   version: {{ version }}
 
 source:
@@ -10,40 +10,90 @@ source:
   sha256: f43b86741f341176133b350474e8511c66e4e26938d3b2592d3c5ec324f4e6f9
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  entry_points:
-    - ptychodus = ptychodus.__main__:main
 
-requirements:
-  host:
-    - pip
-    - python >=3.9
-    - setuptools >=46.4.0
-    - setuptools_scm >=6.2
-    - setuptools_scm_git_archive
-    - wheel
-  run:
-    - h5py =3.*
-    - hdf5-external-filter-plugins-lz4
-    - matplotlib-base =3.*
-    - numpy =1.*
-    - pyqt =5.*
-    - python >=3.9
-    - scipy =1.*
-    - watchdog =2.*
-  run_constrained:
-    - tike =0.22.*
+outputs:
+  # all optional packages
+  - name: ptychodus-all
 
-test:
-  imports:
-    - ptychodus
-  requires:
-    - pip
-  commands:
-    - pip check
-    - ptychodus --version
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage('ptychodus', exact=True) }}
+        - tike
+
+    test:
+      imports:
+        - ptychodus
+      requires:
+        - pip
+      commands:
+        - pip check
+        - ptychodus --version
+
+  # with QT
+  - name: ptychodus
+
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage('ptychodus-core', exact=True) }}
+        - pyqt =5.*
+
+    test:
+      imports:
+        - ptychodus
+      requires:
+        - pip
+      commands:
+        - pip check
+        - ptychodus --version
+
+  # ptychodus without QT (headless) without optional packages
+  - name: ptychodus-core
+
+    script: build-core.sh
+
+    build:
+      noarch: python
+      entry_points:
+        - ptychodus = ptychodus.__main__:main
+
+    requirements:
+      host:
+        - pip
+        - python >=3.9
+        - setuptools >=46.4.0
+        - setuptools_scm >=6.2
+        - setuptools_scm_git_archive
+        - wheel
+      run:
+        - h5py =3.*
+        - hdf5-external-filter-plugins-lz4
+        - matplotlib-base =3.*
+        - numpy =1.*
+        - python >=3.9
+        - scipy =1.*
+        - watchdog =2.*
+      run_constrained:
+        - tike =0.22.*
+
+    test:
+      imports:
+        - ptychodus
+      requires:
+        - pip
+      commands:
+        - pip check
+        # - ptychodus --version
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
