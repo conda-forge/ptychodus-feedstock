@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  noarch: python
 
 outputs:
   # all optional packages
@@ -23,6 +24,7 @@ outputs:
       host:
         - python
       run:
+        - python
         - {{ pin_subpackage('ptychodus', exact=True) }}
         - tike
 
@@ -44,6 +46,7 @@ outputs:
       host:
         - python
       run:
+        - python
         - {{ pin_subpackage('ptychodus-core', exact=True) }}
         - pyqt
 
