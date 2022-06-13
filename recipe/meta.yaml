@@ -1,5 +1,5 @@
 {% set name = "ptychodus" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: ptychodus
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f43b86741f341176133b350474e8511c66e4e26938d3b2592d3c5ec324f4e6f9
+  sha256: 7c4f7aed6fca148e91afc1e5c4cfef145133d220744fdeb82d4cc334be8584c7
 
 build:
   number: 0
@@ -46,7 +46,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage('ptychodus-core', exact=True) }}
-        - pyqt =5.*
+        - pyqt
 
     test:
       imports:
@@ -82,8 +82,10 @@ outputs:
         - numpy =1.*
         - python >=3.9
         - scipy =1.*
+        - tifffile =2022.*
         - watchdog =2.*
       run_constrained:
+        - pyqt =5.*
         - tike =0.22.*
 
     test:
