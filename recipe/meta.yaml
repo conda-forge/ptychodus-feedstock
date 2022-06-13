@@ -27,13 +27,12 @@ outputs:
         - tike
 
     test:
-      imports:
-        - ptychodus
+      # no import test because tike imports cupy
       requires:
         - pip
       commands:
         - pip check
-        - ptychodus --version
+      # no CLI test because tike imports cupy
 
   # with QT
   - name: ptychodus
@@ -95,7 +94,7 @@ outputs:
         - pip
       commands:
         - pip check
-        # - ptychodus --version
+        - ptychodus --version
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
