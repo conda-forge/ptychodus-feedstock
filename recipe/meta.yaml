@@ -1,49 +1,96 @@
 {% set name = "ptychodus" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: ptychodus
   version: {{ version }}
 
 source:
-  url: https://github.com/AdvancedPhotonSource/ptychodus/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f43b86741f341176133b350474e8511c66e4e26938d3b2592d3c5ec324f4e6f9
+  url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
+  sha256: 90a3f2e0692c762e7836047e397026f8abfb3884eb4c3866645dc289f951658c
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  entry_points:
-    - ptychodus = ptychodus.__main__:main
 
-requirements:
-  host:
-    - pip
-    - python >=3.9
-    - setuptools >=46.4.0
-    - setuptools_scm >=6.2
-    - setuptools_scm_git_archive
-    - wheel
-  run:
-    - h5py =3.*
-    - hdf5-external-filter-plugins-lz4
-    - matplotlib-base =3.*
-    - numpy =1.*
-    - pyqt =5.*
-    - python >=3.9
-    - scipy =1.*
-    - watchdog =2.*
-  run_constrained:
-    - tike =0.22.*
+outputs:
+  # all optional packages
+  - name: ptychodus-all
 
-test:
-  imports:
-    - ptychodus
-  requires:
-    - pip
-  commands:
-    - pip check
-    - ptychodus --version
+    build:
+      noarch: generic
+
+    requirements:
+      run:
+        - {{ pin_subpackage('ptychodus', exact=True) }}
+        - tike
+
+    test:
+      # no import test because tike imports cupy
+      requires:
+        - pip
+      commands:
+        - pip check
+      # no CLI test because tike imports cupy
+
+  # with QT
+  - name: ptychodus
+
+    build:
+      noarch: generic
+
+    requirements:
+      run:
+        - {{ pin_subpackage('ptychodus-core', exact=True) }}
+        - pyqt
+
+    test:
+      imports:
+        - ptychodus
+      requires:
+        - pip
+      commands:
+        - pip check
+        - ptychodus --version
+
+  # ptychodus without QT (headless) without optional packages
+  - name: ptychodus-core
+
+    script: build-core.sh
+
+    build:
+      noarch: python
+      entry_points:
+        - ptychodus = ptychodus.__main__:main
+
+    requirements:
+      host:
+        - pip
+        - python >=3.9
+        - setuptools >=46.4.0
+        - setuptools_scm >=6.2
+        - setuptools_scm_git_archive
+        - wheel
+      run:
+        - h5py =3.*
+        - hdf5-external-filter-plugins-lz4
+        - matplotlib-base =3.*
+        - numpy =1.*
+        - python >=3.9
+        - scipy =1.*
+        - tifffile =2022.*
+        - watchdog =2.*
+      run_constrained:
+        - pyqt =5.*
+        - tike =0.22.*
+
+    test:
+      imports:
+        - ptychodus
+      requires:
+        - pip
+      commands:
+        - pip check
+        - ptychodus --version
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
