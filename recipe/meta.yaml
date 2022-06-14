@@ -11,20 +11,16 @@ source:
 
 build:
   number: 0
-  noarch: python
 
 outputs:
   # all optional packages
   - name: ptychodus-all
 
     build:
-      noarch: python
+      noarch: generic
 
     requirements:
-      host:
-        - python
       run:
-        - python
         - {{ pin_subpackage('ptychodus', exact=True) }}
         - tike
 
@@ -40,13 +36,10 @@ outputs:
   - name: ptychodus
 
     build:
-      noarch: python
+      noarch: generic
 
     requirements:
-      host:
-        - python
       run:
-        - python
         - {{ pin_subpackage('ptychodus-core', exact=True) }}
         - pyqt
 
