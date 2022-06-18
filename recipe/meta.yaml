@@ -1,5 +1,5 @@
 {% set name = "ptychodus" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: ptychodus
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: 90a3f2e0692c762e7836047e397026f8abfb3884eb4c3866645dc289f951658c
+  sha256: eadc9eb149de0f460ddf3591f01b3656bb0d3524b296a00783cdbd11828e1c02
 
 build:
   number: 0
@@ -94,7 +94,7 @@ outputs:
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
-  summary: 'Ptychodus is a ptychography analysis front-end.'
+  summary: Ptychodus is a ptychography analysis front-end.
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
