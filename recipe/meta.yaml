@@ -10,7 +10,7 @@ source:
   sha256: eadc9eb149de0f460ddf3591f01b3656bb0d3524b296a00783cdbd11828e1c02
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   # all optional packages
@@ -61,6 +61,7 @@ outputs:
       noarch: python
       entry_points:
         - ptychodus = ptychodus.__main__:main
+        - ptychodus-rpc = ptychodus.model.rpc:main
 
     requirements:
       host:
