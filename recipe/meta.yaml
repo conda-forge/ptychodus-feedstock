@@ -62,6 +62,7 @@ outputs:
       noarch: python
       entry_points:
         - ptychodus = ptychodus.__main__:main
+        - ptychodus-rpc = ptychodus.model.rpc:main
 
     requirements:
       host:
