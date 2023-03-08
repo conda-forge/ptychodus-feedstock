@@ -2,7 +2,7 @@
 {% set version = "0.4.0" %}
 
 package:
-  name: ptychodus
+  name: ptychodus-split
   version: {{ version }}
 
 source:
@@ -22,6 +22,8 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('ptychodus', exact=True) }}
+        - gladier
+        - gladier-tools
         - ptychonn
         - tike
 
