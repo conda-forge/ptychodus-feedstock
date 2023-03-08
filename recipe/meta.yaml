@@ -1,5 +1,5 @@
 {% set name = "ptychodus" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: ptychodus
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: 4de3ba65ce837242ebf2866963ed2df810b394769e0c6e449ef4e32ed466517d
+  sha256: d97e68f7350ca3962fc3c82f867426de9e1c60bca345bf5881a76102dda82ea3
 
 build:
   number: 0
