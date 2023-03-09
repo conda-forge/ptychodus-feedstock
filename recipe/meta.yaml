@@ -1,13 +1,13 @@
 {% set name = "ptychodus" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
-  name: ptychodus
+  name: ptychodus-split
   version: {{ version }}
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: 4de3ba65ce837242ebf2866963ed2df810b394769e0c6e449ef4e32ed466517d
+  sha256: d97e68f7350ca3962fc3c82f867426de9e1c60bca345bf5881a76102dda82ea3
 
 build:
   number: 0
@@ -22,6 +22,8 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('ptychodus', exact=True) }}
+        - gladier
+        - gladier-tools
         - ptychonn
         - tike
 
@@ -67,7 +69,7 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.9
+        - python >=3.10
         - setuptools >=46.4.0
         - setuptools_scm >=7
         - setuptools_scm_git_archive
@@ -77,14 +79,17 @@ outputs:
         - hdf5plugin
         - matplotlib-base =3.*
         - numpy =1.*
-        - python >=3.9
+        - python >=3.10
         - scikit-image >=0.19
         - scipy =1.*
         - tifffile =2022.*
         - watchdog =2.*
       run_constrained:
-        - gladier >=0.8.0b2
-        - ptychonn >=0.0.2,<0.1
+        - fair-research-login >=0.3.0
+        - gladier >=0.8.2
+        - gladier-tools >=0.4.2
+        - globus-sdk >=3.17.0
+        - ptychonn >=0.1.2
         - pyqt =5.*
         - tike =0.23.*
 

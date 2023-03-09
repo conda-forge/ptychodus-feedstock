@@ -1,11 +1,11 @@
-About ptychodus
-===============
+About ptychodus-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ptychodus-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/AdvancedPhotonSource/ptychodus
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ptychodus-feedstock/blob/main/LICENSE.txt)
 
 Summary: Ptychodus is a ptychography analysis front-end.
 
