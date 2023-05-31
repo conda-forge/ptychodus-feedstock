@@ -1,5 +1,5 @@
 {% set name = "ptychodus" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: ptychodus-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: d97e68f7350ca3962fc3c82f867426de9e1c60bca345bf5881a76102dda82ea3
+  sha256: 41c507e4989fd7e49f10cc7286d87b71cca927233039d19ba7db111315d8ed24
 
 build:
   number: 0
@@ -80,7 +80,7 @@ outputs:
         - matplotlib-base =3.*
         - numpy =1.*
         - python >=3.10
-        - scikit-image >=0.19
+        - scikit-image =0.*
         - scipy =1.*
         - tifffile =2022.*
         - watchdog =2.*
@@ -91,7 +91,7 @@ outputs:
         - globus-sdk >=3.17.0
         - ptychonn >=0.1.2
         - pyqt =5.*
-        - tike =0.23.*
+        - tike =0.24.*
 
     test:
       imports:
@@ -104,7 +104,7 @@ outputs:
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
-  summary: Ptychodus is a ptychography analysis front-end.
+  summary: Ptychodus is a ptychography analysis application.
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
