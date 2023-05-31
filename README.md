@@ -1,5 +1,5 @@
-About ptychodus-feedstock
-=========================
+About ptychodus-split-feedstock
+===============================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ptychodus-feedstock/blob/main/LICENSE.txt)
 
@@ -7,7 +7,7 @@ Home: https://github.com/AdvancedPhotonSource/ptychodus
 
 Package license: BSD-3-Clause
 
-Summary: Ptychodus is a ptychography analysis front-end.
+Summary: Ptychodus is a ptychography analysis application.
 
 Development: https://github.com/AdvancedPhotonSource/ptychodus
 
@@ -33,10 +33,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ptychodus--all-green.svg)](https://anaconda.org/conda-forge/ptychodus-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ptychodus-all.svg)](https://anaconda.org/conda-forge/ptychodus-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ptychodus-all.svg)](https://anaconda.org/conda-forge/ptychodus-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ptychodus-all.svg)](https://anaconda.org/conda-forge/ptychodus-all) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ptychodus--core-green.svg)](https://anaconda.org/conda-forge/ptychodus-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ptychodus-core.svg)](https://anaconda.org/conda-forge/ptychodus-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ptychodus-core.svg)](https://anaconda.org/conda-forge/ptychodus-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ptychodus-core.svg)](https://anaconda.org/conda-forge/ptychodus-core) |
 
-Installing ptychodus
-====================
+Installing ptychodus-split
+==========================
 
-Installing `ptychodus` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `ptychodus-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -122,17 +122,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating ptychodus-feedstock
-============================
+Updating ptychodus-split-feedstock
+==================================
 
-If you would like to improve the ptychodus recipe or build a new
+If you would like to improve the ptychodus-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/ptychodus-feedstock are
+Note that all branches in the conda-forge/ptychodus-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
