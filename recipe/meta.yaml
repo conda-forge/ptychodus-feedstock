@@ -1,5 +1,5 @@
 {% set name = "ptychodus" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: ptychodus-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: 07da163d967f20450f23d7e0d2e0850f18a12f55539956a3920d59021b3b3995
+  sha256: f6f3c0d6f7150ff279e5e14140c7c9ad82001ae671e52c33b9fe5a52b8e4cb58
 
 build:
   number: 0
@@ -89,7 +89,7 @@ outputs:
         - gladier >=0.8.2
         - gladier-tools >=0.4.2
         - globus-sdk >=3.17.0
-        - ptychonn >=0.1.2
+        - ptychonn >=0.1.3
         - pyqt =5.*
         - tike =0.24.*
 
