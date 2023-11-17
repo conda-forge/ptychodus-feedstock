@@ -79,6 +79,7 @@ outputs:
         - hdf5plugin
         - matplotlib-base =3.*
         - numpy =1.*
+        - psutil =5.*
         - python >=3.10
         - scikit-image =0.*
         - scipy =1.*
