@@ -89,7 +89,7 @@ outputs:
         - gladier >=0.9
         - gladier-tools >=0.5
         # pytorch is not a direct dependency, but we want to GPU version for ptychonn
-        - pytorch-gpu
+        - pytorch=*=cuda*
         - ptychonn =0.2.*
         - pyqt =5.*
         - tike =0.25.*
