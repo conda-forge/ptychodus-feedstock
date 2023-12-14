@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: be8c6f1240b6443a29fcd872bab86d3470d86d657e7e4c2be0cd6d6038fa847b
+  sha256: 7e772c6a0f88b7bf02954eb16a9c6f59daec449c2aec02262b39ffc23293e4df
 
 build:
   number: 1
