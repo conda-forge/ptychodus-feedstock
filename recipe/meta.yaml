@@ -11,6 +11,7 @@ source:
 
 build:
   number: 1
+  skip: true  # [cuda_compiler_version == "12.0"]
 
 outputs:
   # all optional packages
@@ -18,8 +19,13 @@ outputs:
 
     build:
       noarch: generic
+      ignore_run_exports_from:
+        - {{ compiler('cuda') }}
 
     requirements:
+      build:
+      # We don't need the compiler, just the __cuda virtual package
+        - {{ compiler('cuda') }}
       run:
         - {{ pin_subpackage('ptychodus', exact=True) }}
         - gladier
