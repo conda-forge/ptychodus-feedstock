@@ -7,10 +7,12 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: be8c6f1240b6443a29fcd872bab86d3470d86d657e7e4c2be0cd6d6038fa847b
+  sha256: 7e772c6a0f88b7bf02954eb16a9c6f59daec449c2aec02262b39ffc23293e4df
 
 build:
-  number: 0
+  number: 1
+  skip: true  # [cuda_compiler_version != "11.2"]
+  skip: true  # [cuda_compiler_version == "None"]
 
 outputs:
   # all optional packages
@@ -18,8 +20,13 @@ outputs:
 
     build:
       noarch: generic
+      ignore_run_exports_from:
+        - {{ compiler('cuda') }}
 
     requirements:
+      build:
+      # We don't need the compiler, just the __cuda virtual package
+        - {{ compiler('cuda') }}
       run:
         - {{ pin_subpackage('ptychodus', exact=True) }}
         - gladier
@@ -88,6 +95,8 @@ outputs:
       run_constrained:
         - gladier >=0.9
         - gladier-tools >=0.5
+        # pytorch is not a direct dependency, but we want to GPU version for ptychonn
+        - pytorch=*=cuda*
         - ptychonn =0.2.*
         - pyqt =5.*
         - tike =0.25.*
