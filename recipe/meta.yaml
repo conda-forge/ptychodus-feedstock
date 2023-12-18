@@ -1,16 +1,16 @@
 {% set name = "ptychodus" %}
-{% set version = "0.6.3" %}
+{% set version = "0.6.4" %}
 
 package:
   name: ptychodus-split
   version: {{ version }}
 
 source:
-  url: https://github.com/AdvancedPhotonSource/ptychodus/archive/v{{ version }}.tar.gz
-  sha256: 7e772c6a0f88b7bf02954eb16a9c6f59daec449c2aec02262b39ffc23293e4df
+  url: https://github.com/AdvancedPhotonSource/ptychodus/releases/download/v{{ version }}/ptychodus-v{{ version }}.zip
+  sha256: d74435092355eaef5a6c904e52b1d110fbfb1564bae45f44fdd4eca770b0923d
 
 build:
-  number: 1
+  number: 0
   skip: true  # [cuda_compiler_version != "11.2"]
   skip: true  # [cuda_compiler_version == "None"]
 
