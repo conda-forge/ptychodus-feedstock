@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [cuda_compiler_version != "11.2"]
+  skip: true  # [cuda_compiler_version != "12.0"]
   skip: true  # [cuda_compiler_version == "None"]
 
 outputs:
