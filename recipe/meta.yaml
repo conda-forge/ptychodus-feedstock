@@ -1,5 +1,5 @@
 {% set name = "ptychodus" %}
-{% set version = "0.6.6" %}
+{% set version = "0.6.7" %}
 
 package:
   name: ptychodus-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/AdvancedPhotonSource/ptychodus/releases/download/v{{ version }}/ptychodus-v{{ version }}.zip
-  sha256: 42308044c5a0eb36a7e225f46609628f4d30d70fad87d028311026a46b59be6d
+  sha256: 90b7f8371a2c38e1c722923213774c028c984bd89a657ea251baf646f040d767
 
 build:
   number: 0
