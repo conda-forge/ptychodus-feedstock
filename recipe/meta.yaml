@@ -99,7 +99,7 @@ outputs:
         - pytorch=*=cuda*
         - ptychonn =0.2.*
         - pyqt =5.*
-        - tike =0.25.*
+        - tike >=0.25.3,<0.26
 
     test:
       imports:
