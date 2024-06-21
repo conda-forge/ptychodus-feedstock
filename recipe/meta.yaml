@@ -10,9 +10,7 @@ source:
   sha256: 3813cb3797fe1a3dd5e7501b82a53e5b199e1e785520088a2c7c325390aabd82
 
 build:
-  number: 0
-  skip: true  # [cuda_compiler_version != "12.0"]
-  skip: true  # [cuda_compiler_version == "None"]
+  number: 1
 
 outputs:
   # all optional packages
@@ -20,13 +18,8 @@ outputs:
 
     build:
       noarch: generic
-      ignore_run_exports_from:
-        - {{ compiler('cuda') }}
 
     requirements:
-      build:
-      # We don't need the compiler, just the __cuda virtual package
-        - {{ compiler('cuda') }}
       run:
         - {{ pin_subpackage('ptychodus', exact=True) }}
         - gladier
@@ -95,8 +88,6 @@ outputs:
       run_constrained:
         - gladier >=0.9
         - gladier-tools >=0.5
-        # pytorch is not a direct dependency, but we want to GPU version for ptychonn
-        - pytorch=*=cuda*
         - ptychonn =0.2.*
         - pyqt =5.*
         - tike >=0.25.3,<0.26
