@@ -5,5 +5,5 @@ conda_forge_output_validation: true
 conda_build:
   pkg_format: '2'
 bot:
-  automerge: true
+  automerge: false
   inspection: update-all

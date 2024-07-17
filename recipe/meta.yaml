@@ -10,7 +10,7 @@ source:
   sha256: 459eb812cc1f9b11a742393a5c3010ae1b22f9dd15a9b2fe007c322d53c412a4
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   # all optional packages
@@ -88,7 +88,7 @@ outputs:
       run_constrained:
         - gladier >=0.9
         - gladier-tools >=0.5
-        - ptychonn =0.2.*
+        - ptychonn =0.3.*,>=0.3.7
         - pyqt =5.*
         - tike >=0.25.3,<0.26
 
