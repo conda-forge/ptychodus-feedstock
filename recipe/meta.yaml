@@ -1,16 +1,16 @@
 {% set name = "ptychodus" %}
-{% set version = "0.7.5" %}
+{% set version = "0.7.7" %}
 
 package:
   name: ptychodus-split
   version: {{ version }}
 
 source:
-  url: https://github.com/AdvancedPhotonSource/ptychodus/releases/download/v{{ version }}/ptychodus-v{{ version }}.zip
-  sha256: 459eb812cc1f9b11a742393a5c3010ae1b22f9dd15a9b2fe007c322d53c412a4
+  url: https://github.com/AdvancedPhotonSource/ptychodus/archive/refs/tags/v{{ version }}.zip
+  sha256: cf2feba938093015c80b28b3dbcf53a5faef8febb0df78edf35492fc696e7b4e
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   # all optional packages
@@ -70,24 +70,24 @@ outputs:
       host:
         - pip
         - python >=3.10
-        - setuptools >=46.4.0
-        - setuptools_scm >=7
+        - setuptools >=64
+        - setuptools_scm >=8
         - setuptools_scm_git_archive
         - wheel
       run:
-        - h5py =3.*
+        - h5py
         - hdf5plugin
-        - matplotlib-base =3.*
-        - numpy =1.*
-        - psutil =5.*
+        - matplotlib-base
+        - numpy
+        - psutil
         - python >=3.10
-        - scikit-image =0.*
-        - scipy >=1.6,<2.0
-        - tifffile =2023.*
-        - watchdog =3.*
+        - scikit-image
+        - scipy
+        - tifffile
+        - watchdog
       run_constrained:
-        - gladier >=0.9
-        - gladier-tools >=0.5
+        - gladier
+        - gladier-tools
         - ptychonn =0.3.*,>=0.3.7
         - pyqt =5.*
         - tike >=0.25.3,<0.26
@@ -103,7 +103,7 @@ outputs:
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
-  summary: Ptychodus is a ptychography analysis application.
+  summary: Ptychodus is a ptychography data analysis application.
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
