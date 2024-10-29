@@ -7,7 +7,7 @@ Home: https://github.com/AdvancedPhotonSource/ptychodus
 
 Package license: BSD-3-Clause
 
-Summary: Ptychodus is a ptychography analysis application.
+Summary: Ptychodus is a ptychography data analysis application.
 
 Development: https://github.com/AdvancedPhotonSource/ptychodus
 
@@ -147,7 +147,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@AdvancedPhotonSource/ptychodus](https://github.com/AdvancedPhotonSource/ptychodus/)
+* [@AdvancedPhotonSource/ptychodus](https://github.com/orgs/AdvancedPhotonSource/teams/ptychodus/)
 * [@carterbox](https://github.com/carterbox/)
 * [@stevehenke](https://github.com/stevehenke/)
 
