@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "ptychodus" %}
 {% set version = "0.7.7" %}
 
@@ -10,7 +11,7 @@ source:
   sha256: cf2feba938093015c80b28b3dbcf53a5faef8febb0df78edf35492fc696e7b4e
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   # all optional packages
@@ -69,7 +70,7 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.10
+        - python {{ python_min }}
         - setuptools >=64
         - setuptools_scm >=8
         - setuptools_scm_git_archive
@@ -80,7 +81,7 @@ outputs:
         - matplotlib-base
         - numpy
         - psutil
-        - python >=3.10
+        - python >={{ python_min }}
         - scikit-image
         - scipy
         - tifffile
@@ -97,6 +98,7 @@ outputs:
         - ptychodus
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - ptychodus --version
