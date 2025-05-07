@@ -1,1 +1,1 @@
-$PYTHON -m pip install .[ptychonn,tike,gui,globus] -vv --no-deps --no-build-isolation
+$PYTHON -m pip install .[gui] -vv --no-deps --no-build-isolation
