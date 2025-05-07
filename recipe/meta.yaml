@@ -25,16 +25,15 @@ outputs:
         - {{ pin_subpackage('ptychodus', exact=True) }}
         - gladier
         - gladier-tools
-        - ptychonn
-        - tike
 
     test:
-      # no import test because tike imports cupy
+      imports:
+        - ptychodus
       requires:
         - pip
       commands:
         - pip check
-      # no CLI test because tike imports cupy
+        - ptychodus --version
 
   # with QT
   - name: ptychodus
@@ -82,13 +81,15 @@ outputs:
         - numpy
         - psutil
         - python >={{ python_min }}
+        - requests
         - scikit-image
         - scipy
+        - tables
         - tifffile
         - watchdog
       run_constrained:
         - gladier
-        - gladier-tools
+        - gladier-tools >=0.5.4
         - ptychonn =0.3.*,>=0.3.7
         - pyqt =5.*
         - tike >=0.25.3,<0.26
