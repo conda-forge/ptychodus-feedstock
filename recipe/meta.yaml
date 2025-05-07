@@ -23,8 +23,6 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('ptychodus', exact=True) }}
-        - gladier
-        - gladier-tools
 
     test:
       imports:
