@@ -84,7 +84,7 @@ outputs:
         - requests
         - scikit-image
         - scipy
-        - tables
+        - pytables
         - tifffile
         - watchdog
       run_constrained:
