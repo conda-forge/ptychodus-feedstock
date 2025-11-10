@@ -61,8 +61,9 @@ outputs:
     build:
       noarch: python
       entry_points:
+        - convert-to-ptychodus = ptychodus.convert_to_ptychodus:main
         - ptychodus = ptychodus.__main__:main
-        - ptychodus_bdp = ptychodus.ptychodus_bdp:main
+        - ptychodus-bdp = ptychodus.ptychodus_bdp:main
 
     requirements:
       host:
