@@ -70,13 +70,15 @@ outputs:
         - pip
         - python {{ python_min }}
         - setuptools >=80
-        - setuptools_scm >=8
+        - setuptools_scm >=9.2
       run:
+        - colorcet
         - h5py
         - hdf5plugin
         - matplotlib-base
         - numpy
         - psutil
+        - pydantic
         - python >={{ python_min }}
         - requests
         - scikit-image
@@ -84,9 +86,8 @@ outputs:
         - tifffile
         - watchdog
       run_constrained:
-        - gladier
-        - gladier-tools >=0.5.4
-        - ptychonn =0.3.*,>=0.3.7
+        - globus-sdk
+        - globus-compute-sdk
         - pyqt =5.*
 
     test:
