@@ -7,7 +7,7 @@ Home: https://github.com/AdvancedPhotonSource/ptychodus
 
 Package license: BSD-3-Clause
 
-Summary: Ptychodus is a ptychography data analysis application.
+Summary: Ptychodus is a ptychography data pipeline application.
 
 Development: https://github.com/AdvancedPhotonSource/ptychodus
 
