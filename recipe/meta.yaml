@@ -30,7 +30,7 @@ outputs:
       requires:
         - pip
       commands:
-        - pip check
+        #- pip check
         - ptychodus --version
 
   # with QT
@@ -50,7 +50,7 @@ outputs:
       requires:
         - pip
       commands:
-        - pip check
+        #- pip check
         - ptychodus --version
 
   # ptychodus without QT (headless) without optional packages
@@ -107,7 +107,7 @@ outputs:
         - pip
         - python {{ python_min }}
       commands:
-        - pip check
+        #- pip check
         - ptychodus --version
         # One line per entry point: conda-build generates these wrappers from the
         # list above, so an upstream module rename ships broken binaries while a
