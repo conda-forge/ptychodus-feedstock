@@ -61,10 +61,10 @@ outputs:
     build:
       noarch: python
       entry_points:
-        - convert-to-ptychodus = ptychodus.scripts.convert_to_ptychodus:main
+        - convert-to-ptychodus = ptychodus.cli.convert_to_ptychodus:main
         - ptychodus = ptychodus.__main__:main
-        - ptychodus-bdp = ptychodus.scripts.ptychodus_bdp:main
-        - ptychodus-system-check = ptychodus.scripts.ptychodus_system_check:main
+        - ptychodus-bdp = ptychodus.cli.bdp:main
+        - ptychodus-system-check = ptychodus.cli.system_check:main
 
     requirements:
       host:
@@ -76,15 +76,22 @@ outputs:
         - colorcet
         - h5py >=3
         - hdf5plugin
+        - httpx
         - matplotlib-base
         - mlflow-skinny
         - numpy
+        # conda-only dep with no counterpart in upstream pyproject.toml:
+        # conda-forge's pydantic-ai is a thin wrapper over pydantic-ai-slim and
+        # mirrors none of PyPI's provider extras, so the OpenAI provider that
+        # ptychodus selects at runtime is otherwise missing. Do not remove.
+        - openai
         - psutil
         - pydantic
+        - pydantic-ai >=1.0,<3
         - python >={{ python_min }}
         - pyyaml
-        - requests
         - scikit-image
+        - scikit-learn
         - scipy
         - tifffile
         - watchdog
@@ -102,6 +109,12 @@ outputs:
       commands:
         - pip check
         - ptychodus --version
+        # One line per entry point: conda-build generates these wrappers from the
+        # list above, so an upstream module rename ships broken binaries while a
+        # test that only runs `ptychodus --version` stays green.
+        - convert-to-ptychodus --help
+        - ptychodus-bdp --help
+        - ptychodus-system-check --help
 
 about:
   home: https://github.com/AdvancedPhotonSource/ptychodus
